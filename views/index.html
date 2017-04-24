@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>
+		Our awasome interface
+	</title>
+
+	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+	<!--Scoket.io-->
+	<script src="js/lib/socket.min.js"></script>
+
+	<!--Client Side CSS-->
+	<!-- <link rel="stylesheet" href="css/client.css"> -->
+
+	<!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+
+</head>
+<body>
+<h1> my fucking awasome app</h1>
+<div id="somedata"></div>
+
+<!-- Client side app -->
+<script>
+//Define socket for the user
+var socket = io();	
+var awasomediv = document.getElementById('somedata');
+
+socket.on('connect', function(){
+	console.log('yay, we are live in a browser');
+});
+
+socket.on('motioncapturedata', function(data){
+	awasomediv.innerHTML = data;
+});
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
